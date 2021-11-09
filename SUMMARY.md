@@ -1,6 +1,6 @@
 # Table of contents
 
-* [예비 개발자 조예슬](README.md)
+* [🚀 예비 개발자 조예슬](README.md)
 
 ## M\&M CRM Project(3rd)
 
