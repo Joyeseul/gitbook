@@ -5,7 +5,7 @@
 ## M\&M CRM Project(3rd)
 
 * [효과적인 영업관리 프로그램](m-and-m-crm-project-3rd/undefined.md)
-* [Meet the Team!](m-and-m-crm-project-3rd/meet-the-team.md)
+* [구현과정과 소감](m-and-m-crm-project-3rd/undefined-1.md)
 
 ## WWW HR Project (2nd)
 

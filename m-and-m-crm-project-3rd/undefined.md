@@ -37,7 +37,7 @@ coverY: 0
 
 ![](<../.gitbook/assets/image (2).png>)
 
-![](<../.gitbook/assets/image (9).png>)
+![](<../.gitbook/assets/image (9) (1).png>)
 
 #### 시장조사
 
@@ -53,7 +53,7 @@ coverY: 0
 
 WBS를 통해 일정관리를 하였으며, 이슈가 있는 경우 회의를 통해 이슈를 파악하고 정리하였습니다.
 
-![](<../.gitbook/assets/image (7) (1).png>)
+![](<../.gitbook/assets/image (7) (1) (1).png>)
 
 아래와 같이 이슈사항이 발생할 경우, Notion에 기록하여 조원들이 공유할 수 있도록 하였습다.&#x20;
 
@@ -81,7 +81,7 @@ ERD란 데이터베이스에 저장할 내용을 구조화된 데이터로 표�
 
 여기서는 예시로 '목표' 엔터티를 살펴보겠습니다.
 
-![](<../.gitbook/assets/image (7).png>)
+![](<../.gitbook/assets/image (7) (1).png>)
 
 * 목표 엔터티는 별개로 '목표번호'라는 식별자를 부여하여 관리하였습니다.&#x20;
 * 연도별로 쉽게 구분하기위해 '년'과 '월' 속성을 따로 나눠서 저장하였습니다.&#x20;
@@ -106,7 +106,7 @@ ERD란 데이터베이스에 저장할 내용을 구조화된 데이터로 표�
 
 운영정책, Information Architecture, 메뉴구조도, 화면정의서를 작성했습니다.&#x20;
 
-![](<../.gitbook/assets/image (8).png>)
+![](<../.gitbook/assets/image (8) (1).png>)
 
 ## 프로그램 설계
 
