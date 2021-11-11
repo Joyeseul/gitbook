@@ -15,7 +15,7 @@ coverY: 0
 * 프로젝트 산출물 : Notion페이지
 * 소스코드 : [https://gitlab.com/codefactory-mnm/codefactory-mnm-project](https://gitlab.com/codefactory-mnm/codefactory-mnm-project)
 * 프로젝트 목표 : CRM을 이용함에 있어서, 각 영업 건을 단계별로 관리할 수 있고, 다양한 통계분석으로 영업담당자들의 실적을 한눈에 볼 수 있도록 하는 프로그램입니다.&#x20;
-* 개발환경 : ![](<../.gitbook/assets/image (5).png>)
+* 개발환경 : ![](<../.gitbook/assets/image (5) (1).png>)
 
 ## 프로젝트 방향성
 
@@ -35,7 +35,7 @@ coverY: 0
 
 분석한 유사프로그램은 mondayCRM, pipedrive, HANBIRO, bigin, 핑거세일즈였으, 전반적으로 단계별 영업관리와 고객관리가 주요기능임을 파악하였습니다.
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (2).png>)
 
 ![](<../.gitbook/assets/image (9).png>)
 
@@ -45,21 +45,19 @@ coverY: 0
 
 또한 CRM 시장의 동향도 검색하여, 이슈관리를 위해 CRM 시장이 점차 발전하고 있음을 알 수 있었습니다.&#x20;
 
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (2) (1).png>)
 
-![](<../.gitbook/assets/image (6).png>)
+![](<../.gitbook/assets/image (6) (1).png>)
 
 ## WBS
 
 WBS를 통해 일정관리를 하였으며, 이슈가 있는 경우 회의를 통해 이슈를 파악하고 정리하였습니다.
 
-![](<../.gitbook/assets/image (7).png>)
-
-![](<../.gitbook/assets/image (8).png>)
+![](<../.gitbook/assets/image (7) (1).png>)
 
 아래와 같이 이슈사항이 발생할 경우, Notion에 기록하여 조원들이 공유할 수 있도록 하였습다.&#x20;
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 ## 데이터베이스 설계
 
@@ -67,37 +65,51 @@ WBS를 통해 일정관리를 하였으며, 이슈가 있는 경우 회의를 �
 
 ERD란 데이터베이스에 저장할 내용을 구조화된 데이터로 표시하는 기법입니다.&#x20;
 
-* 사용 tool : DA#
+* 사용 tool : DA# Modeler 5
 * 표기법 : Barker 표기법
+* 엔터티 : 57개&#x20;
+
+![ERD 논리 model](<../.gitbook/assets/ERD 논리.png>)
+
+![ERD 물리 model](<../.gitbook/assets/ERD 물리.png>)
+
+(웹상의 이미지가 잘 안보일경우, 첨부한 png파일을 참조하여 주시기바랍니다.)
+
+{% file src="../.gitbook/assets/ERD 논리 (2).png" %}
+
+{% file src="../.gitbook/assets/ERD 물리 (2).png" %}
+
+여기서는 예시로 '목표' 엔터티를 살펴보겠습니다.
+
+![](<../.gitbook/assets/image (7).png>)
+
+* 목표 엔터티는 별개로 '목표번호'라는 식별자를 부여하여 관리하였습니다.&#x20;
+* 연도별로 쉽게 구분하기위해 '년'과 '월' 속성을 따로 나눠서 저장하였습니다.&#x20;
+* 예컨대 2021년도의 모든 목표를 검색하고 싶을 때, 목표일자가 통째로 202110 로 저장되어있는 경우 앞자리 4자리를 잘라내어 '2021'과 일치하는지 비교하는 과정을 한번 더 거쳐야 합니다. 그러나 이렇게 년과 월을 따로 저장할 경우, 년 속성 중 '2021'과 일치하는 목표열만 불러오면 되므로 보다 간편해집니다.
+* 개인목표와 팀목표는 엔터티를 따로 만들기보다 '구분'을 서브타입으로 만들었습니다. 그리고 개인은 사용자 엔터티에서 '사용자번호'를 foreign key로, 팀목표는 부서엔터티에서 '부서번호'를 foreign key로 받아왔습니다.&#x20;
 
 #### 2. 상관 모델링
 
+![](../.gitbook/assets/image.png)
+
+* 상관모델링이란 각 단위프로세스별로 어떤 엔터티와 CRUD하는지 관계성을 표시한 표입니다.
+* CRUD란 C: Create, R: Read, U : Update, D: Delete를 말합니다.
+
 #### 3. 테이블 정의서
 
-##
+![](<../.gitbook/assets/image (5).png>)
 
-## Our Vision
+* 테이블정의서에서는 보다 구체적으로 각 엔터티 별 속성을 정의한 표입니다.&#x20;
+* PK, FK, UNIQUE, CHECK, NULLABLE의 제한조건에 대해서도 적어놓아 쉽게 확인이 가능합니다.&#x20;
 
-{% hint style="info" %}
-**Good to know:** a good vision statement shows the long-term goals of the company without getting too deep into strategy, implementation, or product specifics.
-{% endhint %}
+## 기획 및 화면설계
 
-Our company vision is to **be the authoritative reference point for environmentally conscious buyers** and to **encourage more sustainable business practices** through curating beautiful, practical, consciously-produced products.
+운영정책, Information Architecture, 메뉴구조도, 화면정의서를 작성했습니다.&#x20;
 
-## Our Values
+![](<../.gitbook/assets/image (8).png>)
 
-{% hint style="info" %}
-**Good to know:** company values are statements about how you approach work; how you treat colleagues, customers and users; and what your company stands for.
-{% endhint %}
+## 프로그램 설계
 
-### Be Compassionate
+프로그램설계과정에서는 각 기능프로세스별로 나누었던 기능마다, package, Controller, URL, 구현방식들을 정했습니다. 이후 본격적으로 구현과정에 들어갔습니다.&#x20;
 
-We treat everyone we encounter with compassion, seeing the humanity behind their problems and experiences.
-
-### Be Mindful
-
-We do not take advantage of our users' attention and adopt mindful working practices so that we can create safe spaces both in our working environment and in our products themselves.
-
-### Research First
-
-We challenge our own and others' assumptions through qualitative and quantitative research. Not sure about an idea? Test it.
+![](<../.gitbook/assets/image (1).png>)
